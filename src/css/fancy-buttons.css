@@ -1,0 +1,212 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+/* Radius */
+.btn-radius {
+   -fx-border-radius: 3px;
+}
+
+/* Sizes */
+.btn-small {
+    -fx-font-size: 0.8125em;
+    -fx-padding: 0.4125em 1.25em;
+}
+.btn-medium {
+    -fx-font-size: 0.9375em;
+    -fx-padding: 0.5375em 1.375em;
+}
+.btn-large {
+    -fx-font-size: 1.0625em;
+    -fx-padding: 0.5625em 1.5em;
+}
+
+/* Colors */
+.btn-green {
+   -fx-background-color: transparent;
+   -fx-text-fill: #3CB371;
+   -fx-border-color: #3CB371;
+}
+.btn-green:hover {
+   -fx-background-color: #3CB371;
+   -fx-text-fill: white;
+   -fx-border-color: #3CB371;       
+}
+
+.btn-green:pressed {
+   -fx-background-color: #10854f;
+   -fx-border-color: #10854f;
+}
+
+.btn-green-2 {
+   -fx-background-color: #1c9b01;
+   -fx-text-fill: white;
+   -fx-border-color: #1c9b01;
+}
+.btn-green-2:hover {
+   -fx-background-color: #006227;
+   -fx-text-fill: white;
+   -fx-border-color: #006227;
+}
+
+.btn-green-2:pressed {
+   -fx-background-color: #007519;
+   -fx-border-color: #007519;
+}
+
+.btn-blue {
+   -fx-background-color: transparent;
+   -fx-text-fill: #4682B4;
+   -fx-border-color: #4682B4;
+}
+.btn-blue:hover {
+   -fx-background-color: #4682B4;
+   -fx-text-fill: white;
+   -fx-border-color: #4682B4;      
+}
+
+.btn-blue-2 {
+   -fx-background-color: #0066ff;
+   -fx-text-fill: white;
+   -fx-border-color: #0066ff;
+}
+.btn-blue-2:hover {
+   -fx-background-color: #004498;
+   -fx-text-fill: white;
+   -fx-border-color: #004498;
+}
+
+.btn-orange-2 {
+   -fx-background-color: #FF8C00;
+   -fx-text-fill: white;
+   -fx-border-color: #FF8C00;
+}
+.btn-orange-2:hover {
+   -fx-background-color: #945200;
+   -fx-text-fill: white;
+   -fx-border-color: #945200;
+}
+
+.btn-red-2 {
+   -fx-background-color: #B22222;
+   -fx-text-fill: white;
+   -fx-border-color: #B22222;
+}
+.btn-red-2:hover {
+   -fx-background-color: #730000;
+   -fx-text-fill: white;
+   -fx-border-color: #730000;
+}
+
+.btn-red-2:pressed {
+   -fx-background-color: #7a0000;
+   -fx-border-color: #7a0000;
+}
+
+.btn-orange {
+   -fx-background-color: transparent;
+   -fx-text-fill: #FF8C00;
+   -fx-border-color: #FF8C00;
+}
+.btn-orange:hover {
+   -fx-background-color: #FF8C00;
+   -fx-text-fill: white;
+   -fx-border-color: #FF8C00;       
+}
+
+.btn-red {
+   -fx-background-color: transparent;
+   -fx-text-fill: #b22222;
+   -fx-border-color: #B22222;
+}
+.btn-red:hover {
+   -fx-background-color: #B22222;
+   -fx-text-fill: white;
+   -fx-border-color: #B22222;  
+}
+.btn-red:pressed {
+   -fx-background-color: #7c0000;
+   -fx-text-fill: white;
+   -fx-border-color: #7c0000;
+}
+
+.btn-gray {
+   -fx-background-color: transparent;
+   -fx-text-fill: #808080;
+   -fx-border-color: #808080;
+}
+.btn-gray:hover {
+   -fx-background-color: #808080;
+   -fx-text-fill: white;
+   -fx-border-color: #808080;
+}
+
+.btn-gray-2 {
+   -fx-background-color: #808080;
+   -fx-text-fill: white;
+   -fx-border-color: #808080;
+}
+.btn-gray-2:hover {
+   -fx-background-color: #636363;
+   -fx-text-fill: white;
+   -fx-border-color: #636363;
+}
+
+/* Dialog Panes */
+.dialog-pane{
+   -fx-background-color: #181818;
+   -fx-border-color: #181818;
+   -fx-text-fill: white;
+   -fx-border-radius: 10px;
+}
+
+.dialog-pane *.label.content {
+   -fx-text-fill: grey;
+}
+
+.dialog-pane *.header-panel {
+   -fx-background-color: #181818;
+   -fx-font-size: 18px;
+   -fx-text-fill: white;
+   -fx-font-weight: bold;
+}
+
+.jfx-tab-pane .tab-header-area .tab-selected-line {
+   -fx-background-color: #5a5959;
+}
+
+.default-color0.chart-bar { -fx-bar-fill: #326da8; }
+.default-color1.chart-bar { -fx-bar-fill: #a8323e; }
+
+.axis-label {
+   -fx-text-fill: #FFFF; 
+}
+
+.chart-legend-item {
+    -fx-text-fill: #191970;
+}
+
+.jfx-tab-pane .tab-header-background
+{
+   -fx-background-color: #000000;
+}
+
+/* Grupos da agenda */
+
+.Em {
+    -fx-background-color: #ffb700;
+    -fx-fill: #000000;
+}
+
+.Ou {
+   -fx-background-color: #00ff99;
+   -fx-fill: #000000;
+}
+
+.Re {
+   -fx-background-color: #8a0000;
+   -fx-fill: #000000;
+}
+
+.Ac {
+    -fx-background-color: #11fd00;
+   -fx-fill: #000000;
+}

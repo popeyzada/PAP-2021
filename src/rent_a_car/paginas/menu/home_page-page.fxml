@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="720.0" prefWidth="1145.0" style="-fx-background-color: #1A1A1D;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rent_a_car.paginas.menu.controllers.HomePageController">
+   <children>
+      <ImageView fitHeight="219.0" fitWidth="189.0" layoutX="924.0" layoutY="476.0" opacity="0.16" pickOnBounds="true">
+         <image>
+            <Image url="@../../../imagens/este_mes-box.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="474.0" fitWidth="1145.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../imagens/home_banner.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="243.0" fitWidth="897.0" layoutX="17.0" layoutY="475.0" opacity="0.26" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../imagens/total-box.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="478.0" layoutY="493.0">
+         <children>
+            <ImageView fitHeight="189.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../imagens/viaturas-box.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="numero_viaturasT" alignment="CENTER" layoutX="85.0" layoutY="12.0" text="0" textAlignment="CENTER" textFill="#eeff00" wrapText="true">
+               <font>
+                  <Font name="Dubai Regular" size="37.0" />
+               </font>
+               <padding>
+                  <Insets top="100.0" />
+               </padding>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="237.0" layoutY="493.0">
+         <children>
+            <ImageView fitHeight="189.0" fitWidth="195.0" layoutX="10.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../imagens/clientes-box.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="numero_clientesT" alignment="CENTER" layoutX="95.0" layoutY="12.0" text="0" textAlignment="CENTER" textFill="#0078ff" wrapText="true">
+               <font>
+                  <Font name="Dubai Regular" size="37.0" />
+               </font>
+               <padding>
+                  <Insets top="100.0" />
+               </padding>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="23.0" layoutY="494.0">
+         <children>
+            <ImageView fitHeight="189.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../imagens/reservas-box.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="numero_reservasT" alignment="CENTER" layoutX="87.0" layoutY="14.0" text="0" textAlignment="CENTER" textFill="#02ff00" wrapText="true">
+               <font>
+                  <Font name="Dubai Regular" size="37.0" />
+               </font>
+               <padding>
+                  <Insets top="100.0" />
+               </padding>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="713.0" layoutY="494.0">
+         <children>
+            <ImageView fitHeight="189.0" fitWidth="195.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../imagens/acidentes-box.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="numero_incidentesT" alignment="CENTER" layoutX="85.0" layoutY="12.0" text="0" textAlignment="CENTER" textFill="RED" wrapText="true">
+               <font>
+                  <Font name="Dubai Regular" size="37.0" />
+               </font>
+               <padding>
+                  <Insets top="100.0" />
+               </padding>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="925.0" layoutY="495.0">
+         <children>
+            <ImageView fitHeight="189.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../imagens/reservas-box2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="numero_reservasM" alignment="CENTER" layoutX="85.0" layoutY="12.0" text="0" textAlignment="CENTER" textFill="#00e6ff" wrapText="true">
+               <font>
+                  <Font name="Dubai Regular" size="37.0" />
+               </font>
+               <padding>
+                  <Insets top="100.0" />
+               </padding>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</Pane>

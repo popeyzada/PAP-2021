@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import jfxtras.scene.control.CalendarTimeTextField?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="957.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rent_a_car.paginas.menu.sub_paginas.controllers.reserva.addReservaPageController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="472.0" layoutX="43.0" layoutY="106.0" stroke="#c9c9c9" strokeType="INSIDE" width="870.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="69.0" layoutX="711.0" layoutY="484.0" stroke="#c9c9c9" strokeType="INSIDE" width="188.0" />
+      <Label alignment="CENTER" layoutX="360.0" layoutY="37.0" text="Adicionar nova reserva">
+         <graphic>
+            <FontAwesomeIcon glyphName="CALENDAR" selectionStart="0" size="1.1em" wrappingWidth="24.014286041259766" />
+         </graphic>
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="170.0" prefHeight="17.0" prefWidth="130.0" text="Cliente*" />
+      <Label layoutX="61.0" layoutY="218.0" prefHeight="17.0" prefWidth="130.0" text="Viatura*" />
+      <Label fx:id="generoLabel" contentDisplay="RIGHT" layoutX="60.0" layoutY="267.0" prefHeight="17.0" prefWidth="130.0" text="Seguro*" />
+      <Label layoutX="484.0" layoutY="170.0" prefHeight="17.0" prefWidth="130.0" text="Local de entrega*" />
+      <Label layoutX="485.0" layoutY="268.0" prefHeight="17.0" prefWidth="130.0" text="Data de entrega*" />
+      <Label layoutX="484.0" layoutY="317.0" prefHeight="17.0" prefWidth="130.0" text="Data de devolução*" />
+      <ComboBox fx:id="cliente" layoutX="142.0" layoutY="166.0" prefHeight="25.0" prefWidth="249.0" promptText="Selecionar cliente" />
+      <Label layoutX="43.0" layoutY="628.0" prefHeight="17.0" prefWidth="308.0" text="Campos com * (asterisco) são de preenchimento obrigatório" textFill="RED">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro" alignment="CENTER" layoutX="555.0" layoutY="581.0" prefHeight="17.0" prefWidth="357.0" textFill="RED" />
+      <ComboBox fx:id="seguro" layoutX="142.0" layoutY="263.0" prefHeight="25.0" prefWidth="249.0" promptText="Selecionar seguro" />
+      <DatePicker fx:id="data_devolucao" editable="false" layoutX="621.0" layoutY="313.0" prefHeight="25.0" prefWidth="177.0" promptText="dd/mm/aaaa" showWeekNumbers="true" />
+      <ComboBox fx:id="local_entrega" layoutX="620.0" layoutY="166.0" prefHeight="25.0" prefWidth="268.0" promptText="Local de entrega" visibleRowCount="3" />
+      <ComboBox fx:id="viatura" layoutX="142.0" layoutY="214.0" prefHeight="25.0" prefWidth="249.0" promptText="Selecionar viatura" />
+      <Label layoutX="416.0" layoutY="119.0" text="Informações" />
+      <DatePicker fx:id="data_entrega" editable="false" layoutX="621.0" layoutY="264.0" prefHeight="25.0" prefWidth="177.0" promptText="dd/mm/aaaa" showWeekNumbers="true" />
+      <CalendarTimeTextField fx:id="hora_entrega" layoutX="811.0" layoutY="264.0" prefHeight="25.0" prefWidth="78.0" promptText="hh:mm" />
+      <CalendarTimeTextField fx:id="hora_devolucao" layoutX="811.0" layoutY="313.0" prefHeight="25.0" prefWidth="78.0" promptText="hh:mm" />
+      <Label layoutX="212.0" layoutY="366.0" text="Extras" />
+      <Label layoutX="672.0" layoutY="369.0" text="Cálculos" />
+      <Label layoutX="489.0" layoutY="401.0" prefHeight="17.0" prefWidth="90.0" text="Taxa aeroporto" />
+      <Label layoutX="736.0" layoutY="445.0" prefHeight="17.0" prefWidth="97.0" text="IVA (%)" />
+      <Label layoutX="489.0" layoutY="445.0" prefHeight="17.0" prefWidth="90.0" text="Taxas diversas" />
+      <Label layoutX="733.0" layoutY="401.0" prefHeight="17.0" prefWidth="97.0" text="Desconto (%)" />
+      <TextField fx:id="taxa_diversas" alignment="CENTER" layoutX="591.0" layoutY="441.0" prefHeight="25.0" prefWidth="56.0" promptText="1.99" />
+      <TextField fx:id="taxa_aeroporto" alignment="CENTER" layoutX="591.0" layoutY="397.0" prefHeight="25.0" prefWidth="56.0" promptText="6" />
+      <DatePicker fx:id="data_reserva" editable="false" layoutX="42.0" layoutY="65.0" prefHeight="25.0" prefWidth="177.0" promptText="dd/mm/aaaa" showWeekNumbers="true" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="44.0" prefHeight="17.0" prefWidth="177.0" text="Data da reserva*" />
+      <Label layoutX="63.0" layoutY="554.0" text="Total:" textFill="#909090">
+         <font>
+            <Font name="Arial" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="valor_extra" layoutX="96.0" layoutY="554.0" prefHeight="15.0" prefWidth="28.0" text="0 €" textFill="#868686" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Line endX="51.0" layoutX="449.0" layoutY="145.0" startX="-52.0" />
+      <Line endX="32.0" layoutX="228.0" layoutY="385.0" startX="-34.0" />
+      <Line endX="35.0" layoutX="696.0" layoutY="388.0" startX="-37.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="69.0" layoutX="488.0" layoutY="484.0" stroke="#c9c9c9" strokeType="INSIDE" width="218.0" />
+      <Label layoutX="499.0" layoutY="499.0" text="Valor diário:" textFill="#009425">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="723.0" layoutY="507.0" prefWidth="105.0" text="Valor total:" textFill="RED">
+         <font>
+            <Font name="Arial Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="valor_diario" layoutX="578.0" layoutY="498.0" prefHeight="17.0" prefWidth="116.0" text="0.0 €">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="valorTotal_sDesconto" layoutX="636.0" layoutY="522.0" prefHeight="17.0" prefWidth="66.0" text="0.0 €">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="valor_total" layoutX="830.0" layoutY="499.0" prefHeight="38.0" prefWidth="66.0" text="0.0 €" textFill="RED" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="499.0" layoutY="523.0" text="Valor total s/ desconto:" textFill="#00466b">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="extras" layoutX="62.0" layoutY="399.0" prefHeight="152.0" prefWidth="330.0">
+        <columns>
+          <TableColumn fx:id="extra" maxWidth="200.0" minWidth="-Infinity" prefWidth="200.0" text="Extra" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Spinner fx:id="percentagemdesconto" layoutX="830.0" layoutY="397.0" prefHeight="25.0" prefWidth="66.0" />
+      <Spinner fx:id="percentagemIVA" disable="true" layoutX="830.0" layoutY="441.0" prefHeight="25.0" prefWidth="66.0" />
+      <Label layoutX="485.0" layoutY="218.0" prefHeight="17.0" prefWidth="130.0" text="Local de devolucao*" />
+      <ComboBox fx:id="local_devolucao" layoutX="621.0" layoutY="214.0" prefHeight="25.0" prefWidth="268.0" promptText="Local de devolução" visibleRowCount="3" />
+      <Label fx:id="generoLabel1" contentDisplay="RIGHT" layoutX="61.0" layoutY="316.0" prefHeight="17.0" prefWidth="130.0" text="Situação*" />
+      <ComboBox fx:id="situacao" layoutX="143.0" layoutY="312.0" prefHeight="25.0" prefWidth="249.0" promptText="Selecionar situação" />
+      <JFXButton layoutX="629.0" layoutY="600.0" onAction="#btn1" prefHeight="45.0" prefWidth="138.0" ripplerFill="#030303" style="-fx-text-fill: black;" stylesheets="@../../../../css/fancy-buttons.css" text="Cancelar" textAlignment="CENTER">
+         <styleClass>
+            <String fx:value="btn-large" />
+            <String fx:value="btn-gray-2" />
+            <String fx:value="btn-radius" />
+         </styleClass>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="777.0" layoutY="600.0" onAction="#btn2" prefHeight="45.0" prefWidth="138.0" ripplerFill="#00bf16" style="-fx-text-fill: black;" stylesheets="@../../../../css/fancy-buttons.css" text="Submeter" textAlignment="CENTER">
+         <styleClass>
+            <String fx:value="btn-green-2" />
+            <String fx:value="btn-radius" />
+            <String fx:value="btn-large" />
+         </styleClass>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

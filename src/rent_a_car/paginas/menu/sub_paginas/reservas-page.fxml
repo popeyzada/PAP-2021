@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import jfxtras.scene.control.agenda.Agenda?>
+
+
+<AnchorPane fx:id="anchorPane" prefHeight="720.0" prefWidth="1145.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rent_a_car.paginas.menu.sub_paginas.controllers.reserva.ReservasPageController">
+   <children>
+      <Agenda fx:id="agenda" allowDragging="false" allowResize="false" layoutX="37.0" layoutY="36.0" prefHeight="649.0" prefWidth="1071.0" />
+   </children>
+</AnchorPane>

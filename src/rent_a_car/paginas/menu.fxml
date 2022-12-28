@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="janelaPrincipal" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rent_a_car.HomeController">
+   <left>
+      <AnchorPane fx:id="menu" prefHeight="720.0" prefWidth="0.0" style="-fx-background-color: #1A1A1D;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="2.0" prefHeight="85.0" prefWidth="282.0" style="-fx-background-color: #b56400;">
+               <children>
+                  <Label layoutX="18.0" layoutY="1.0" prefHeight="84.0" prefWidth="243.0" text="MENU" textFill="WHITE">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <JFXHamburger fx:id="hamburguer" layoutX="197.0" layoutY="15.0" prefHeight="55.0" prefWidth="72.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="58.0" layoutY="660.0" text="Copyright © Mateus Corrente " textFill="#434343">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="2.0" layoutY="98.0" prefHeight="522.0" prefWidth="0.0">
+               <children>
+                  <JFXButton fx:id="btn1" layoutX="-1.0" layoutY="-11.0" onAction="#botao1" prefHeight="64.0" prefWidth="282.0" ripplerFill="WHITE" styleClass="menu-btn-grey" stylesheets="@../../css/menu_fancy-buttons.css" text="Página inicial" textFill="WHITE" wrapText="true">
+                     <effect>
+                        <Glow level="0.44">
+                           <input>
+                              <BoxBlur height="13.9" iterations="2" width="138.43" />
+                           </input>
+                        </Glow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <graphic>
+                        <FontAwesomeIcon fill="#9a9a9a" glyphName="HOME" size="1.8em" wrappingWidth="25.700000762939453" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn2" layoutX="-1.0" layoutY="54.0" onAction="#botao2" prefHeight="64.0" prefWidth="283.0" ripplerFill="WHITE" styleClass="menu-btn-grey" stylesheets="@../../css/menu_fancy-buttons.css" text="Clientes" textFill="#4d4b4b">
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <graphic>
+                        <FontAwesomeIcon fill="#9a9a9a" glyphName="USER" size="1.8em" wrappingWidth="25.700000762939453" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="-7.0" layoutY="463.0" onAction="#botao8" prefHeight="55.0" prefWidth="289.0" ripplerFill="WHITE" styleClass="menu-btn-red" stylesheets="@../../css/menu_fancy-buttons.css" text="           Administração" textFill="#4d4b4b">
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <JFXButton fx:id="btn3" layoutX="-1.0" layoutY="119.0" onAction="#botao3" prefHeight="64.0" prefWidth="283.0" ripplerFill="WHITE" styleClass="menu-btn-grey" stylesheets="@../../css/menu_fancy-buttons.css" text="Viaturas" textFill="#4d4b4b">
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <graphic>
+                        <FontAwesomeIcon fill="#9a9a9a" glyphName="CAR" size="1.4em" wrappingWidth="25.700000762939453" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn5" layoutX="1.0" layoutY="249.0" onAction="#botao5" prefHeight="64.0" prefWidth="281.0" ripplerFill="WHITE" styleClass="menu-btn-grey" stylesheets="@../../css/menu_fancy-buttons.css" text="Preçário" textFill="#4d4b4b">
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <graphic>
+                        <FontAwesomeIcon fill="#9a9a9a" glyphName="DOLLAR" size="1.9em" wrappingWidth="25.700000762939453" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn6" layoutY="314.0" onAction="#botao6" prefHeight="64.0" prefWidth="282.0" ripplerFill="WHITE" styleClass="menu-btn-grey" stylesheets="@../../css/menu_fancy-buttons.css" text="Seguro" textFill="#4d4b4b">
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <graphic>
+                        <FontAwesomeIcon fill="#9a9a9a" glyphName="SHIELD" size="1.8em" wrappingWidth="25.700000762939453" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn4" layoutY="184.0" onAction="#botao4" prefHeight="64.0" prefWidth="282.0" ripplerFill="WHITE" styleClass="menu-btn-grey" stylesheets="@../../css/menu_fancy-buttons.css" text="Reservas" textFill="#4d4b4b">
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <graphic>
+                        <FontAwesomeIcon fill="#9a9a9a" glyphName="CALENDAR" size="1.7em" wrappingWidth="25.700000762939453" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn7" layoutY="379.0" onAction="#botao7" prefHeight="64.0" prefWidth="282.0" ripplerFill="WHITE" styleClass="menu-btn-grey" stylesheets="@../../css/menu_fancy-buttons.css" text="         Acidentes" textFill="#4d4b4b">
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <FontAwesomeIcon fill="#9a9a9a" glyphName="GEAR" layoutX="6.0" layoutY="500.0" size="1.8em" wrappingWidth="22.700000762939453" />
+                  <FontAwesomeIcon fill="#9a9a9a" glyphName="EXCLAMATION" layoutX="10.0" layoutY="421.0" size="2em" wrappingWidth="25.700000762939453" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="720.0" prefWidth="1145.0" style="-fx-background-color: #1A1A1D;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="146.0" layoutY="90.0" text="Software de gestão de alugueres" textAlignment="CENTER" textFill="#b5b5b5">
+               <font>
+                  <Font size="59.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="473.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
+   </center>
+</BorderPane>

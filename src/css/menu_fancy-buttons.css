@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+/* Colors */
+.menu-btn-grey {
+   -fx-background-color: transparent;
+   -fx-text-fill: #979797;
+   -fx-alignment: center-left;
+}
+.menu-btn-grey:hover {
+   -fx-background-color: #010f4e;  /* #130030 */
+   -fx-text-fill: #ffffff;
+}
+
+.menu-btn-red {
+   -fx-background-color:#850202;
+   -fx-text-fill: #979797;
+   -fx-alignment: center-left;
+}
+.menu-btn-red:hover {
+   -fx-background-color: #490000;  /* #080014 */
+   -fx-text-fill: #ffffff;
+}

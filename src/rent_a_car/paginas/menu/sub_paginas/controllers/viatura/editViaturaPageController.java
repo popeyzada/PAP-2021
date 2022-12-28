@@ -1,0 +1,222 @@
+package rent_a_car.paginas.menu.sub_paginas.controllers.viatura;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+import rent_a_car.funcionalidades.ComboBoxAutoComplete;
+import rent_a_car.funcionalidades.ConexaoBDB;
+import java.net.URL;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
+
+// Importar funcoes de outras classes
+import static rent_a_car.funcionalidades.Validacoes.*;
+
+
+public class editViaturaPageController implements Initializable {
+    @FXML
+    private ComboBox<String> marca;
+    @FXML
+    private TextField num_portas;
+    @FXML
+    private TextField matricula;
+    @FXML
+    private Label erro;
+    @FXML
+    private DatePicker fim_garantia;
+    @FXML
+    private TextField modelo;
+    @FXML
+    private TextField ano;
+    @FXML
+    private ComboBox<String> combustivel;
+    @FXML
+    private ComboBox<String> caixa_velocidades;
+    @FXML
+    private TextField num_lugares;
+    @FXML
+    private ComboBox<String> tanque_combustivel;
+    @FXML
+    private ComboBox<String> grupo;
+    @FXML
+    private DatePicker prox_inspecao;
+
+    // Dados iniciais do cliente (Quando não foram editados ainda)
+    private int viaturaID;
+    private String Grupo;
+    private String Marca;
+    private String Modelo;
+    private String Ano;
+    private String Tipo_comb;
+    private String Caixa_vel;
+    private String Data_garantia;
+    private String Num_portas;
+    private String Num_lugares;
+    private String Matricula;
+    private String Prox_inspecao;
+    private String Tanque_combustivel;
+
+    @FXML
+        void btn1(ActionEvent event) {   // Cancelar
+            try {
+                fecharJanela(event);
+            } catch (Exception e) {
+                System.out.println("Ocorreu um erro ao tentar fechar a janela de adicionar clientes\n " + e);
+            }
+        }
+
+        @FXML
+        void btn2(ActionEvent event) {   // Redefinir
+            introduzirValoresNE(Grupo, Marca, Modelo, Ano, Tipo_comb, Caixa_vel, Data_garantia, Num_portas, Num_lugares, Matricula, Prox_inspecao, Tanque_combustivel);
+        }
+
+        @FXML
+        void btn3(ActionEvent event) {  // Submeter
+            if(marca.getValue() == null || modelo.getText().isEmpty() || ano.getText().isEmpty() || combustivel.getValue() == null || caixa_velocidades.getValue() == null || matricula.getText().isEmpty() || grupo.getValue() == null || fim_garantia.getValue() == null || prox_inspecao.getValue() == null) {
+                erro.setText("Há campos obrigatórios em branco!");
+            } else {
+                erro.setText("");
+
+                if(updateViatura()) {
+                    try {
+                        // Mensagem de sucesso
+                        fecharJanela(event);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+            } else {
+                // Mensagem de erro
+            }
+        }
+    }
+
+    // Declaracao de outras classes
+    private ConexaoBDB baseDados = new ConexaoBDB();
+
+    public void initialize(URL url, ResourceBundle rb) {
+        // Adicionar lista de marcas de carros na ComboBox marca
+        ObservableList<String> carrosMarcas = FXCollections.observableArrayList();
+
+        carrosMarcas.setAll("Abarth", "Alfa Romeo", "Aston Martin", "Audi", "Bentley", "BMW", "Bugatti", "Cadillac", "Chevrolet", "Chrysler", "Citroën", "Dacia", "Daewoo", "Daihatsu", "Dodge", "Donkervoort", "DS", "Ferrari", "Fiat", "Fisker", "Ford", "Honda", "Hummer", "Hyundai", "Infiniti", "Iveco", "Jaguar", "Jeep", "Kia", "KTM", "Lada", "Lamborghini", "Lancia", "Land Rover", "Landwind", "Lexus", "Lotus", "Maserati", "Maybach", "Mazda", "McLaren", "Mercedes-Benz", "MG", "Mini", "Mitsubishi", "Morgan", "Nissan", "Opel", "Peugeot", "Porsche", "Renault", "Rolls-Royce", "Rover", "Saab", "Seat", "Skoda", "Smart", "SsangYong", "Subaru", "Suzuki", "Tesla", "Toyota", "Volkswagen", "Volvo");
+        marca.setItems(carrosMarcas);
+
+        // Função de auto-completar no ComboBox marca
+        marca.setTooltip(new Tooltip());
+        new ComboBoxAutoComplete(marca);
+
+
+        // Adicionar lista de combustiveis (Gasoleo ou gasolina ou eletrico) na ComboBox combustivel
+        combustivel.setItems(getObservableItems("Gasóleo", "Gasolina", "Elétrico"));
+
+
+        // Adicionar lista de caixa de velocidades (Automática ou manual) na ComboBox caixa_velocidades
+        caixa_velocidades.setItems(getObservableItems("Automática", "Manual"));
+
+
+        // Adicionar lista do nivel do tanque de combustivel que o carro tem que voltar (1/4, 1/3, 1/2 ou CHEIO) na ComboBox tanque_combustivel
+        tanque_combustivel.setItems(getObservableItems("CHEIO", "1/2", "1/3", "1/4"));
+
+
+        // Adicionar lista de grupos existentes na Base De Dados (Faz uma query na DB e retorna e adiciona todos os possíveis) na ComboBox grupo
+        ObservableList<String> listaGrupos = FXCollections.observableArrayList();
+
+        // Executar query para inserir os dados da viatura a ser adicionada
+        try {
+            ResultSet queryResult;
+
+            // Executar query para obter dados de todos os clientes
+            queryResult = baseDados.executarQuery("SELECT categoria FROM precario ORDER BY categoria ASC;\n");
+
+            while(queryResult.next()){
+                listaGrupos.add(
+                        queryResult.getString("categoria")
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println("Ocorreu ao tentar retornar os grupos existentes da tabela precario!\n" + e);
+        }
+        grupo.setItems(listaGrupos);
+
+
+        // Forçar TextFields para aceitar um length máximo e/ou numeros
+        setCampoStringLength(matricula, 9);
+        setCampoNumerico(num_lugares, 2);
+        setCampoNumerico(num_portas, 2);
+        setCampoNumerico(ano, 4);
+    }
+
+    public void introduzirValoresAuto(int ID, String grupo, String marca, String modelo, int ano, String combustivel, String caixa_vel, Date fim_garantia, int portas, int lugares, String matricula, Date prox_inspecao, String tanque_combustivel) {
+        viaturaID = ID;
+        introduzirValoresNE(grupo, marca, modelo, String.valueOf(ano), combustivel, caixa_vel, fim_garantia.toString(), String.valueOf(portas), String.valueOf(lugares), matricula, prox_inspecao.toString(), tanque_combustivel);
+        introduzirValoresString();
+    }
+
+    public void introduzirValoresNE(String grupo, String marca, String modelo, String ano, String combustivel, String caixa_vel, String fim_garantia, String portas, String lugares, String matricula, String prox_inspecao, String tanque_combustivel) {
+        this.grupo.setValue(grupo);
+        this.marca.setValue(marca);
+        this.modelo.setText(modelo);
+        this.ano.setText(ano);
+        this.combustivel.setValue(combustivel);
+        this.caixa_velocidades.setValue(caixa_vel);
+        this.fim_garantia.setValue(LocalDate.parse(fim_garantia));
+        this.num_portas.setText(portas);
+        this.num_lugares.setText(lugares);
+        this.matricula.setText(matricula);
+        this.prox_inspecao.setValue(LocalDate.parse(prox_inspecao));
+        this.tanque_combustivel.setValue(tanque_combustivel);
+    }
+
+    public void introduzirValoresString() {
+        Grupo = (String) grupo.getValue();
+        Marca = marca.getValue();
+        Modelo = modelo.getText();
+        Ano = ano.getText();
+        Tipo_comb = (String) combustivel.getValue();
+        Caixa_vel = caixa_velocidades.getValue();
+        Data_garantia = ""; if(fim_garantia.getValue() != null) { Data_garantia = fim_garantia.getValue().toString(); }
+        Num_portas = num_portas.getText();
+        Num_lugares = num_lugares.getText();
+        Matricula = matricula.getText();
+        Prox_inspecao = ""; if(prox_inspecao.getValue() != null) { Prox_inspecao = prox_inspecao.getValue().toString(); }
+        Tanque_combustivel = tanque_combustivel.getValue();
+    }
+
+    private boolean updateViatura() {
+        // Retirar e guardar os dados dos campos em variaveis (Depois de mudados)
+        String Grupo = (String) grupo.getValue();
+        String Marca = marca.getValue();
+        String Modelo = modelo.getText();
+        String Ano = ano.getText();
+        String Tipo_comb = (String) combustivel.getValue();
+        String Caixa_vel = caixa_velocidades.getValue();
+        String Data_garantia = ""; if(fim_garantia.getValue() != null) { Data_garantia = fim_garantia.getValue().toString(); }
+        String Num_portas = num_portas.getText();
+        String Num_lugares = num_lugares.getText();
+        String Matricula = matricula.getText();
+        String Prox_inspecao = ""; if(prox_inspecao.getValue() != null) { Prox_inspecao = prox_inspecao.getValue().toString(); }
+        String Tanque_combustivel = tanque_combustivel.getValue();
+
+        // Executar query para inserir os dados do cliente a ser adicionado
+            if(baseDados.executarPreparedQueryUpdate("UPDATE viaturas SET precario_grupo = ?, marca = ?, modelo = ?, ano = ?, tipo_combustivel = ?, caixa_velocidades = ?, data_garantia = ?, portas = ?, lugares = ?, matricula = ?, prox_inspecao = ?, tanque_combustivel = ? WHERE viaturaID = ?;", Grupo, Marca, Modelo, Ano, Tipo_comb, Caixa_vel, Data_garantia, Num_portas, Num_lugares, Matricula, Prox_inspecao, Tanque_combustivel, String.valueOf(viaturaID))) {
+               return true;
+            } else {
+                erro.setText("Ocorreu um erro ao tentar editar esta viatura!");
+            }
+        return false;
+    }
+
+    private void fecharJanela(ActionEvent actionEvent) {
+        Button btn = (Button) actionEvent.getSource();
+        Stage dialog = (Stage) btn.getScene().getWindow();
+
+        dialog.close();
+    }
+}
+
