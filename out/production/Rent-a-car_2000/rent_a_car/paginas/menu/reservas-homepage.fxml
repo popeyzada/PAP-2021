@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1145.0" style="-fx-background-color: #1A1A1D;" stylesheets="@../../../css/fancy-buttons.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rent_a_car.paginas.menu.controllers.ReservasHomePageController">
+   <children>
+      <JFXTabPane fx:id="tabPane" layoutY="-6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="728.0" prefWidth="1145.0" />
+   </children>
+</AnchorPane>

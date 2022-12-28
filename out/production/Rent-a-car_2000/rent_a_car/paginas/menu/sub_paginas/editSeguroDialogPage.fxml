@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rent_a_car.paginas.menu.sub_paginas.controllers.seguro.editSeguroPageController">
+   <children>
+      <Label layoutX="26.0" layoutY="614.0" prefHeight="17.0" prefWidth="308.0" text="Campos com * (asterisco) são de preenchimento obrigatório" textFill="RED">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro" alignment="CENTER" layoutX="242.0" layoutY="436.0" prefHeight="17.0" prefWidth="296.0" textFill="RED" />
+      <JFXButton layoutX="243.0" layoutY="519.0" onAction="#btn3" prefHeight="42.0" prefWidth="296.0" ripplerFill="#00bf16" style="-fx-text-fill: black;" stylesheets="@../../../../css/fancy-buttons.css" text="Submeter" textAlignment="CENTER">
+         <styleClass>
+            <String fx:value="btn-green-2" />
+            <String fx:value="btn-radius" />
+            <String fx:value="btn-large" />
+         </styleClass>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="273.0" layoutY="34.0" text="Editar seguro existente">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon glyphName="SHIELD" selectionStart="0" size="1.1em" wrappingWidth="24.014286041259766" />
+         </graphic>
+      </Label>
+      <Label layoutX="129.0" layoutY="184.0" prefHeight="17.0" prefWidth="130.0" text="Nome*" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="112.0" layoutX="242.0" layoutY="285.0" stroke="#c9c9c9" strokeType="INSIDE" width="296.0" />
+      <Label layoutX="355.0" layoutY="259.0" text="Preço (diario)" />
+      <Label layoutX="259.0" layoutY="333.0" prefHeight="17.0" prefWidth="87.0" text="Valor*" />
+      <TextField fx:id="valor" layoutX="314.0" layoutY="329.0" prefHeight="25.0" prefWidth="200.0" promptText="49.90" />
+      <TextField fx:id="nome" layoutX="194.0" layoutY="176.0" prefHeight="32.0" prefWidth="407.0" promptText="Basic" />
+      <JFXButton layoutX="243.0" layoutY="469.0" onAction="#btn1" prefHeight="42.0" prefWidth="138.0" ripplerFill="#030303" style="-fx-text-fill: black;" stylesheets="@../../../../css/fancy-buttons.css" text="Cancelar" textAlignment="CENTER">
+         <styleClass>
+            <String fx:value="btn-large" />
+            <String fx:value="btn-gray-2" />
+            <String fx:value="btn-radius" />
+         </styleClass>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="393.0" layoutY="469.0" onAction="#btn2" prefHeight="42.0" prefWidth="146.0" ripplerFill="#7a6200" style="-fx-text-fill: black;" stylesheets="@../../../../css/fancy-buttons.css" text="Redefinir" textAlignment="CENTER">
+         <styleClass>
+            <String fx:value="btn-orange-2" />
+            <String fx:value="btn-radius" />
+            <String fx:value="btn-large" />
+         </styleClass>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

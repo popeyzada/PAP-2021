@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rent_a_car.paginas.menu.sub_paginas.controllers.viatura.editViaturaPageController">
+   <children>
+      <Label layoutX="26.0" layoutY="614.0" prefHeight="17.0" prefWidth="308.0" text="Campos com * (asterisco) são de preenchimento obrigatório" textFill="RED">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="414.0" layoutY="503.0" onAction="#btn1" prefHeight="42.0" prefWidth="138.0" ripplerFill="#030303" style="-fx-text-fill: black;" stylesheets="@../../../../css/fancy-buttons.css" text="Cancelar" textAlignment="CENTER">
+         <styleClass>
+            <String fx:value="btn-large" />
+            <String fx:value="btn-gray-2" />
+            <String fx:value="btn-radius" />
+         </styleClass>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="564.0" layoutY="503.0" onAction="#btn2" prefHeight="42.0" prefWidth="146.0" ripplerFill="#7a6200" style="-fx-text-fill: black;" stylesheets="@../../../../css/fancy-buttons.css" text="Redefinir" textAlignment="CENTER">
+         <styleClass>
+            <String fx:value="btn-orange-2" />
+            <String fx:value="btn-radius" />
+            <String fx:value="btn-large" />
+         </styleClass>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></JFXButton>
+      <Label fx:id="erro" alignment="CENTER" layoutX="414.0" layoutY="467.0" prefHeight="17.0" prefWidth="296.0" textFill="RED" />
+      <JFXButton layoutX="414.0" layoutY="553.0" onAction="#btn3" prefHeight="42.0" prefWidth="296.0" ripplerFill="#00bf16" style="-fx-text-fill: black;" stylesheets="@../../../../css/fancy-buttons.css" text="Submeter" textAlignment="CENTER">
+         <styleClass>
+            <String fx:value="btn-green-2" />
+            <String fx:value="btn-radius" />
+            <String fx:value="btn-large" />
+         </styleClass>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="259.0" layoutY="30.0" text=" Editar viatura existente">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon glyphName="CAR" selectionStart="0" size="1.1em" wrappingWidth="24.014286041259766" />
+         </graphic>
+      </Label>
+      <Label layoutX="35.0" layoutY="127.0" prefHeight="17.0" prefWidth="130.0" text="Marca*" />
+      <Label layoutX="36.0" layoutY="177.0" prefHeight="17.0" prefWidth="130.0" text="Modelo*" />
+      <Label fx:id="generoLabel" contentDisplay="RIGHT" layoutX="35.0" layoutY="222.0" prefHeight="17.0" prefWidth="130.0" text="Ano*" />
+      <Label layoutX="35.0" layoutY="268.0" prefHeight="17.0" prefWidth="130.0" text="Combustível*" />
+      <Label layoutX="35.0" layoutY="316.0" prefHeight="17.0" prefWidth="130.0" text="Caixa de velocidades*" />
+      <Label layoutX="36.0" layoutY="362.0" prefHeight="17.0" prefWidth="130.0" text="Fim da garantia*" />
+      <ComboBox fx:id="marca" editable="true" layoutX="166.0" layoutY="123.0" prefHeight="25.0" prefWidth="177.0" promptText="Selecionar a marca" />
+      <Label layoutX="35.0" layoutY="410.0" prefHeight="17.0" prefWidth="130.0" text="N° Portas" />
+      <TextField fx:id="num_portas" layoutX="167.0" layoutY="406.0" prefHeight="25.0" prefWidth="43.0" />
+      <Label layoutX="36.0" layoutY="541.0" prefHeight="17.0" prefWidth="130.0" text="Tanque de combústivel" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="124.0" layoutX="429.0" layoutY="120.0" stroke="#c9c9c9" strokeType="INSIDE" width="296.0" />
+      <Label layoutX="543.0" layoutY="127.0" text="Identificação" />
+      <Label layoutX="439.0" layoutY="165.0" prefHeight="17.0" prefWidth="87.0" text="Matrícula*" />
+      <TextField fx:id="matricula" layoutX="503.0" layoutY="161.0" prefHeight="25.0" prefWidth="200.0" promptText="AA 01 AA" />
+      <DatePicker fx:id="fim_garantia" editable="false" layoutX="166.0" layoutY="358.0" prefHeight="25.0" prefWidth="177.0" promptText="dd/mm/aaaa" />
+      <TextField fx:id="modelo" layoutX="167.0" layoutY="174.0" prefHeight="25.0" prefWidth="177.0" />
+      <TextField fx:id="ano" layoutX="166.0" layoutY="218.0" prefHeight="25.0" prefWidth="63.0" />
+      <ComboBox fx:id="combustivel" layoutX="166.0" layoutY="264.0" prefHeight="25.0" prefWidth="177.0" visibleRowCount="3" />
+      <ComboBox fx:id="caixa_velocidades" layoutX="166.0" layoutY="312.0" prefHeight="25.0" prefWidth="177.0" visibleRowCount="2" />
+      <Label layoutX="36.0" layoutY="450.0" prefHeight="17.0" prefWidth="130.0" text="N° Lugares" />
+      <TextField fx:id="num_lugares" layoutX="168.0" layoutY="446.0" prefHeight="25.0" prefWidth="43.0" />
+      <ComboBox fx:id="tanque_combustivel" layoutX="167.0" layoutY="537.0" prefHeight="25.0" prefWidth="177.0" visibleRowCount="4" />
+      <Label fx:id="generoLabel1" contentDisplay="RIGHT" layoutX="439.0" layoutY="214.0" prefHeight="17.0" prefWidth="43.0" text="Grupo*" />
+      <ComboBox fx:id="grupo" layoutX="503.0" layoutY="210.0" prefHeight="17.0" prefWidth="63.0" />
+      <Label layoutX="37.0" layoutY="494.0" prefHeight="17.0" prefWidth="130.0" text="Próx. inspeção*" />
+      <DatePicker fx:id="prox_inspecao" editable="false" layoutX="167.0" layoutY="490.0" prefHeight="25.0" prefWidth="177.0" promptText="dd/mm/aaaa" />
+   </children>
+</AnchorPane>
