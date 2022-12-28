@@ -6,7 +6,7 @@ Prova de Aptidão Profssional (Portugal)
 
 This is a Rental Management Software for a fictitious rent-a-car company (RENT-A-CAR 2000) with a solution based on the company's needs and functionalities to be accessed exclusively by authorized persons such as an employee, using user credentials and a unique password.
 
-```The program aims to have key elements for the car rental business area such as available vehicles, customer list, price per category on the company's vehicles, insurance available, calculate the different types of variants on a rental, etc.```
+`The program aims to have key elements for the car rental business area such as available vehicles, customer list, price per category on the company's vehicles, insurance available, calculate the different types of variants on a rental, etc.`
 
 <sub>This was my year of graduation at my college course "Técnico de Informática - Sistemas" (Computer Science Engineering).</sub>
 
