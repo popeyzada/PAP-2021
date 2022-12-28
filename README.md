@@ -6,6 +6,10 @@ Prova de Aptidão Profssional (Portugal)
 
 <sub>This was my year of graduation at my college course "Técnico de Informática - Sistemas" (Computer Science Engineering).</sub>
 
+## 🛠 Used programming languages/libraries
+![image](https://user-images.githubusercontent.com/58425672/209751711-7879020b-eb81-4718-9018-54485fa0b1e0.png)
+
+
 ## 📷 Some pictures
 ![image](https://user-images.githubusercontent.com/58425672/209750705-7420fbe1-f607-477a-ace2-e30abb6c9530.png)
 ![image](https://user-images.githubusercontent.com/58425672/209750814-06fc8bf1-0742-4b22-83f1-08666ed9dcd9.png)
