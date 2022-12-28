@@ -4,6 +4,10 @@ Prova de Aptidão Profssional (Portugal)
 ## 🎯 Summary
 > Final course *Java project* made all by my self in 2021 (Finished at 31/01/2021), took me about 3 months of work. 
 
+This is a Rental Management Software for a fictitious rent-a-car company (RENT-A-CAR 2000) with a solution based on the company's needs and functionalities to be accessed exclusively by authorized persons such as an employee, using user credentials and a unique password.
+
+The program aims to have key elements for the business area such as the following functionalities: available vehicles, customer list, price per category on the company's vehicles, insurance available, calculate the different types of variants on a rental, etc.
+
 <sub>This was my year of graduation at my college course "Técnico de Informática - Sistemas" (Computer Science Engineering).</sub>
 
 ## 🛠 Used programming languages/libraries
