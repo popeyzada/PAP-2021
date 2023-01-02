@@ -8,7 +8,7 @@ This is a Rental Management Software for a fictitious rent-a-car company (RENT-A
 
 `The program aims to have key elements for the car rental business area such as available vehicles, customer list, price per category on the company's vehicles, insurance available, calculate the different types of variants on a rental, etc.`
 
-<sub>This was my year of graduation at my college course "Técnico de Informática - Sistemas" (Computer Science Engineering).</sub>
+<sub>This was my year of graduation at my high school course "Técnico de Informática - Sistemas" (Computer Science Engineering).</sub>
 
 ## 🛠 Used programming languages/libraries
 ![image](https://user-images.githubusercontent.com/58425672/209751711-7879020b-eb81-4718-9018-54485fa0b1e0.png)
